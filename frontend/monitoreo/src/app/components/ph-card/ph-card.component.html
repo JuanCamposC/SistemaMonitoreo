@@ -1,0 +1,15 @@
+<div [ngClass]="['card', getCardClass()]">
+    <h3>pH</h3>
+      <div *ngIf="loading">Cargando datos...</div>
+    
+    <div *ngIf="!loading && !error && ph && !ph.mensaje">
+        <div class="value">{{ ph.ph }}</div>
+        <div class="sensor-name">Sensor ID: {{ph.id || 'N/A'}}</div>
+        <div class="date">{{ ph.fecha ? (ph.fecha | date:'dd/MM/yyyy HH:mm:ss') : 'Fecha no disponible' }}</div>
+        <div class="last-update">Última actualización: {{ updateTime | date:'HH:mm:ss' }}</div>
+    </div>
+    
+    <div *ngIf="error || (ph && ph.mensaje)" class="error-message">
+        {{ error || ph?.mensaje }}
+    </div>
+</div>

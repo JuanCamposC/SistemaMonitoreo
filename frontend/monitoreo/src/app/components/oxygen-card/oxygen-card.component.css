@@ -1,0 +1,88 @@
+.card {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.card .value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card .date, .card .last-update {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.card .last-update {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.refresh-button {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.refresh-button button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s;
+}
+
+.refresh-button button:hover {
+    background-color: #2980b9;
+}
+
+.refresh-button button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.sensor-name {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.card-success {
+    background-color: #dff8e7;
+    border-left: 5px solid #4CAF50;
+}
+
+.card-warning {
+    background-color: #fff9e6;
+    border-left: 5px solid #FFC107;
+}
+
+.card-danger {
+    background-color: #ffebee;
+    border-left: 5px solid #F44336;
+}
+
+.card-default {
+    background-color: #f1f1f1;
+    border-left: 5px solid #9E9E9E;
+}
+
+.card-loading {
+    opacity: 0.7;
+}
+
+.error-message {
+    color: #F44336;
+    font-size: 0.9rem;
+}

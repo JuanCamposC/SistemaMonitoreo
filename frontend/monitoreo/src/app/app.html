@@ -1,0 +1,49 @@
+<style>
+  :host {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .header p {
+    color: #666;
+    margin-top: 0;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="header">
+  <h1>{{ title }}</h1>
+  <p>Monitoreo en tiempo real</p>
+</div>
+
+<div class="card-container">
+  <app-temperature-card></app-temperature-card>
+  <app-ph-card></app-ph-card>
+  <app-oxygen-card></app-oxygen-card>
+</div>

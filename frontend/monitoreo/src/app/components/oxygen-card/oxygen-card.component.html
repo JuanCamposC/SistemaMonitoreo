@@ -1,0 +1,15 @@
+<div [ngClass]="['card', getCardClass()]">
+    <h3>Oxígeno</h3>
+      <div *ngIf="loading">Cargando datos...</div>
+    
+    <div *ngIf="!loading && !error && oxigeno && !oxigeno.mensaje">
+        <div class="value">{{ oxigeno.oxigeno }} mg/L</div>
+        <div class="sensor-name">Sensor ID: {{oxigeno.id || 'N/A'}}</div>
+        <div class="date">{{ oxigeno.fecha ? (oxigeno.fecha | date:'dd/MM/yyyy HH:mm:ss') : 'Fecha no disponible' }}</div>
+        <div class="last-update">Última actualización: {{ updateTime | date:'HH:mm:ss' }}</div>
+    </div>
+    
+    <div *ngIf="error || (oxigeno && oxigeno.mensaje)" class="error-message">
+        {{ error || oxigeno?.mensaje }}
+    </div>
+</div>

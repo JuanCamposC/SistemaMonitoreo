@@ -1,0 +1,15 @@
+<div [ngClass]="['card', getCardClass()]">
+    <h3>Temperatura</h3>
+      <div *ngIf="loading">Cargando datos...</div>
+    
+    <div *ngIf="!loading && !error && temperatura && !temperatura.mensaje">
+        <div class="value">{{ temperatura.temperatura }} °C</div>
+        <div class="sensor-name">Sensor ID: {{temperatura.id || 'N/A'}}</div>
+        <div class="date">{{ temperatura.fecha ? (temperatura.fecha | date:'dd/MM/yyyy HH:mm:ss') : 'Fecha no disponible' }}</div>
+        <div class="last-update">Última actualización: {{ updateTime | date:'HH:mm:ss' }}</div>
+    </div>
+    
+    <div *ngIf="error || (temperatura && temperatura.mensaje)" class="error-message">
+        {{ error || temperatura?.mensaje }}
+    </div>
+</div>
